@@ -1,0 +1,11 @@
+@import "_mixins/font-face";
+
+@include font-face("Pragmatica-300", "../fonts/Pragmatica-Light", 300, normal);
+@include font-face("Pragmatica-400", "../fonts/Pragmatica-Book", 400, normal);
+@include font-face("Pragmatica-500", "../fonts/Pragmatica-Medium", 500, normal);
+
+@include font-face("TT-Commons-400", "../fonts/TTCommons-Regular", 400, normal);
+@include font-face("TT-Commons-500", "../fonts/TTCommons-Medium", 500, normal);
+@include font-face("TT-Commons-600", "../fonts/TTCommons-DemiBold", 600, normal);
+@include font-face("TT-Commons-700", "../fonts/TTCommons-Bold", 700, normal);
+

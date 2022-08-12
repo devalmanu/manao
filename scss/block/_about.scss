@@ -1,0 +1,53 @@
+.about {
+   padding: 115px 0;
+   &__container {
+      display: flex;
+      gap: 30px;
+      @include breakpoint(tablet) {
+        flex-direction: column;
+      }
+   }
+   &__content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      p.about__subtitle {
+         font-family: $Pragmatica-500;
+         padding-top: 0.35em;
+         font-size: 20px;
+         line-height: 1.5;
+      }
+      p {
+         padding: 0.3em 0 0.45em;
+         line-height: 24px;
+      }
+   }
+   
+   &__photo {
+      flex: 1;
+      border-radius: $radius-default;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   .gallery {
+      margin-top: auto;
+      display: flex;
+      gap: 30px;
+      &__item {
+         flex: 1;
+         border-radius: $radius-default;
+         overflow: hidden;
+         min-height: 175px;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+}

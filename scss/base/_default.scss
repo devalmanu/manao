@@ -1,0 +1,247 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+*:hover,
+*:focus {
+  outline: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+	min-width: 320px;
+	position: relative;
+	font-family: $Pragmatica-400;
+	font-size: 16px;
+	line-height: 24px;
+	overflow-x: hidden;
+	min-height: 100vh;
+	color: $color-dark;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	overflow-anchor: none;
+	background: $color-white;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+::placeholder {
+	color: $accent;
+}
+
+.site-container {
+	@include flex-h-column;
+	min-height: 100%;
+	position: relative;
+}
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.header {
+	flex: 0 0 auto;
+}
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+img {
+	@include block;
+	max-width: 100%;
+	height: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+b, strong {
+	font-weight: bold;
+}
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+	color: $color-dark;
+	text-decoration: none;
+	transition: all 0.4s ease-in;
+	cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: $TTCommons-700;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+h1 {
+	@include breakpoint(tablet) {
+		font-size: 40px;
+	}
+	@include breakpoint(phablet) {
+		font-size: 35px;
+	}
+}
+h2 {
+	font-size: 48px;
+	line-height: 1;
+	margin-bottom: 15px;
+	@include breakpoint(tablet) {
+		font-size: 40px;
+	}
+	@include breakpoint(phablet) {
+		font-size: 35px;
+	}
+}
+h3 {
+	font-size: 30px;	
+}
+h4 {
+	font-size: 20px;	
+}
+
+h5 {
+	font-size: 15px;
+}
+p {
+	margin: 0;
+	font-family: $Pragmatica-400;
+	font-size: 16px;
+	line-height: 1.5;
+	color: $color-dark;
+}
+
+.is-vishidden {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+.btn-reset {
+	border: none;
+	padding: 0;
+	background: 0 0;
+	cursor: pointer;
+}
+
+.btn-accent {
+	display: block;
+	font-family: $TTCommons-600;
+	font-size: 16px;
+	line-height: 1;
+	color: $color-white;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	width: 100%;
+	max-width: 333px;
+	padding: 22px 44px 20px 43px;
+	margin-top: 26px;
+	background: $background-gradient;
+	border-radius: $radius-big;
+	white-space: nowrap;
+	transition: all 0.5s linear;
+	
+	&:hover {
+		background: linear-gradient(105.96deg, #59298c 18.07%, #893491 92.2%);
+	}
+	@include breakpoint(tablet) {
+		padding: 17px 27px;
+	}
+	&.btn-form {
+		height: 56px;
+		width: 223px;
+		flex-shrink: 0;
+		position: relative;
+		padding: 22px 41px 20px 41px;
+		background: transparent;
+		transition: all 0.5s ease-in;
+		z-index: 1;
+		&::after {
+			content: "";
+			position: absolute;
+			top: -2px;
+			bottom: -2px;
+			left: -2px;
+			right: -2px;
+			background: $background-gradient;
+			border-radius: 50px;
+			z-index: -1;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 1px;
+			bottom: 1px;
+			left: 1px;
+			right: 1px;
+			background: #0c0b35c7;
+			border-radius: 50px;
+			z-index: 0;
+		}
+		span {
+			font-size: 16px;
+			line-height: 19px;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			transform:translate(-50%, -50%);
+			padding-top: 3px;
+			z-index: 3;
+		}
+		&:hover {
+			&::before {
+				background: $background-gradient;
+			}
+		}
+	}
+}
+
+
+.stop-scroll {
+	.overlay {
+		@include block;
+		width: 100%;
+		opacity: 1;
+		overflow: visible;
+		pointer-events: all;
+		left: 0;
+	}
+}
+.overlay {
+	@include breakpoint(tablet) {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: -100%;
+		bottom: 0;
+		z-index: 36;
+		transition: 0.6s ease-in-out;
+		background: transparent;
+		opacity: 0;
+		overflow: hidden;
+		pointer-events: none;
+	}
+}

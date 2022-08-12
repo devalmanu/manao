@@ -1,0 +1,52 @@
+.services {
+   padding: 115px 0;
+   background: $background-light;
+   &__container {
+      text-align: center;
+   }
+   h2 {
+      margin-bottom: 5px;
+   }
+   p {
+      font-family: $Pragmatica-400;
+      font-size: 18px;
+      line-height: 24px;
+      color: $color-gray;
+   }
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      grid-auto-flow: dense;
+      gap: 32px 30px;
+      margin-top: 44px;
+     @include breakpoint(phablet) {
+         gap: 20px;
+     }
+   } 
+   &__item {
+      display: flex;
+      align-items: center;
+      column-gap: 17px;
+      padding: 27px 29px;
+      background: $color-white;
+      border-radius: $radius-default;
+      min-height: 120px;
+      p {
+         font-family: $Pragmatica-500;
+         font-size: 15px;
+         line-height: 22px;
+         color: $color-dark;
+         text-align: left;
+      }
+   }
+   &__icon {
+      width: 66px;
+      height: 66px;
+      background: $background-gradient;
+      border-radius: 50%;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      flex-shrink: 0;
+   }
+}

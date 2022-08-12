@@ -1,0 +1,60 @@
+
+.banner {
+   padding: 204px 0 46px;
+   background: no-repeat url("../../img/@1x/bg-banner.jpg") #040B2A;
+   background-position: center;
+   background-size: cover;
+   &__container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 93px;
+   }
+   &__suptitle {
+      font-family: $Pragmatica-400;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.02em;
+      color: $accent;
+      margin-bottom: 16px;
+   }
+   &__title {
+      font-family: $TTCommons-700;
+      font-size: 64px;
+      line-height: 1.1;
+      color: $color-white;
+      max-width: 800px;
+      @include breakpoint(desktop) {
+         font-size: 54px;
+      }
+      @include breakpoint(tablet) {
+         font-size: 44px;
+      }
+      @include breakpoint(phablet) {
+         font-size: 36px;
+      }
+   }
+
+   &__partner {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+         display: block;
+         font-family: $TTCommons-400;
+         font-size: 17px;
+         color: $color-white;
+         margin-right: 23px;
+      }
+      &-block {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         column-gap: 17px;
+         
+      }
+   }
+}
