@@ -117,7 +117,7 @@ form.addEventListener('submit', function (event) {
 
 });
 
-
+// popup
 manaoLink.forEach((el) => {
    el.addEventListener('click', (e) => {
       let path = e.currentTarget.getAttribute('data-path');
