@@ -110,14 +110,14 @@
   }
   &--active {
     position: absolute;
-    right: calc(90vw - 38px);
-    top: 15px;
+    right: 25px;
+    top: 45px;
     transform: rotate(0deg);
     margin-right: auto;
     
     @include breakpoint(mobilemini) {
       max-width: 165px;
-      right: calc(165px - 41px);
+      // right: calc(165px - 41px);
     } 
     .burger__line {
       display: none;
