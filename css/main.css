@@ -338,7 +338,6 @@ p {
   width: 100%;
   opacity: 1;
   overflow: visible;
-  pointer-events: all;
   left: 0;
 }
 
