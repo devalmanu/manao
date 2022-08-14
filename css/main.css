@@ -1315,6 +1315,15 @@ p {
         flex-wrap: wrap;
   }
 }
+.footer__bottom-partner a:hover {
+  color: #ffffff;
+  -webkit-transition: 1s ease-in;
+  -o-transition: 1s ease-in;
+  transition: 1s ease-in;
+}
+.footer__bottom-partner a:hover svg path {
+  fill: currentColor;
+}
 .footer__bottom-info {
   display: -webkit-box;
   display: -ms-flexbox;
