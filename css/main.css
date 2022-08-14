@@ -514,8 +514,8 @@ p {
 }
 .burger--active {
   position: absolute;
-  right: calc(90vw - 38px);
-  top: 15px;
+  right: 25px;
+  top: 45px;
   -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -524,7 +524,6 @@ p {
 @media (max-width: 395px) {
   .burger--active {
     max-width: 165px;
-    right: 124px;
   }
 }
 .burger--active .burger__line {
@@ -628,7 +627,7 @@ p {
             flex-direction: column;
     row-gap: 8px;
     overflow-y: auto;
-    padding: 65px 15px 35px;
+    padding: 83px 15px 40px;
     width: 100%;
     max-width: 90vw;
     min-width: 320px;
