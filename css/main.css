@@ -1067,8 +1067,48 @@ p {
 .posts .swiper-button-next, .posts .swiper-container-rtl .swiper-button-prev {
   right: -10px;
 }
+@media (max-width: 1280px) {
+  .posts .swiper-button-next, .posts .swiper-container-rtl .swiper-button-prev {
+    right: 0;
+  }
+}
+@media (max-width: 576px) {
+  .posts .swiper-button-next, .posts .swiper-container-rtl .swiper-button-prev {
+    display: none;
+  }
+}
 .posts .swiper-button-prev, .posts .swiper-container-rtl .swiper-button-next {
   left: -10px;
+}
+@media (max-width: 1280px) {
+  .posts .swiper-button-prev, .posts .swiper-container-rtl .swiper-button-next {
+    left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .posts .swiper-button-prev, .posts .swiper-container-rtl .swiper-button-next {
+    display: none;
+  }
+}
+.posts .swiper-pagination {
+  display: none;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+@media (max-width: 576px) {
+  .posts .swiper-pagination {
+    display: block;
+  }
+}
+.posts .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 4px;
+}
+.posts .swiper-pagination-bullet-active {
+  background: -o-linear-gradient(344.04deg, #3F0F72 13.07%, #791281 85.2%);
+  background: linear-gradient(105.96deg, #3F0F72 13.07%, #791281 85.2%);
 }
 
 .footer {
