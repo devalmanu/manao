@@ -138,9 +138,38 @@
    }
    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
       right: -10px;
+      @include breakpoint(desktop) {
+         right: 0;
+      }
+      @include breakpoint(mobileonly) {
+         display: none;
+      }
    }
    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
       left: -10px;
+      @include breakpoint(desktop) {
+         left: 0;
+      }
+      @include breakpoint(mobileonly) {
+         display: none;
+      }
+   }
+   .swiper-pagination {
+      display: none;
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      @include breakpoint(mobileonly) {
+        display: block;
+      }
+   }
+   .swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: 0 4px;
+   }
+   .swiper-pagination-bullet-active {
+      background: $background-gradient;
    }
  }
  

@@ -66,14 +66,13 @@ document.querySelectorAll('a.link-button[href^="#"').forEach(link => {
 // posts slider
 const postsSlider = new Swiper('.posts__slider', {
    speed: 500,
-   navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-   },
    breakpoints: {
       320: {
          slidesPerView: 1,
-         spaceBetween: 10
+         spaceBetween: 10,
+         pagination: {
+            el: '.swiper-pagination',
+         },
       },
       480: {
          slidesPerView: 1.5,
@@ -81,7 +80,11 @@ const postsSlider = new Swiper('.posts__slider', {
       },
       578: {
          slidesPerView: 2,
-         spaceBetween: 20
+         spaceBetween: 20,
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
       },
       768: {
          slidesPerView: 2.5,
@@ -94,25 +97,6 @@ const postsSlider = new Swiper('.posts__slider', {
    }
 });
 
-
-// form.addEventListener('submit', function (event) {
-//    event.preventDefault();
-
-//    if (!textarea.value) {
-//       validateBtn.classList.remove('manao-link');
-//       console.log('пустое поле')
-
-//    } else {
-//       validateBtn.disabled = false;
-//       validateBtn.classList.add('manao-link');
-//       console.log('clicked on validate')
-//       console.log('name: ', nameUser.value)
-//       console.log('email: ', emailUser.value)
-//       console.log('message: ', messageUser.value)
-//       event.target.reset();
-//    }
-
-// });
 
 // animate input
 inputs.forEach(input => {
