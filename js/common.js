@@ -8,18 +8,15 @@ const inputs = document.querySelectorAll('input');
 const textarea = document.querySelector('textarea');
 const headerHeight = header.offsetHeight;
 
-const manaoLink = document.querySelectorAll('.manao-link');
+const manaoLink = document.querySelector('.manao-link');
 const modalOverlay = document.querySelector('.modal-overlay');
-const modals = document.querySelectorAll('.modal');
+const modal = document.querySelector('.modal');
 
 // validate
 const form = document.querySelector('#form');
-const validateBtn = form.querySelector('.btn-form');
-const nameUser = form.querySelector('.input-name')
-const emailUser = form.querySelector('.input-email')
-const messageUser = form.querySelector('.input-message');
-const fields = form.querySelectorAll('.inputText input');
-const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+
+
 
 document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
 // burder open/close
@@ -98,49 +95,24 @@ const postsSlider = new Swiper('.posts__slider', {
 });
 
 
-form.addEventListener('submit', function (event) {
-   event.preventDefault();
+// form.addEventListener('submit', function (event) {
+//    event.preventDefault();
 
-   if (!textarea.value) {
-      validateBtn.classList.remove('manao-link');
-      console.log('пустое поле')
+//    if (!textarea.value) {
+//       validateBtn.classList.remove('manao-link');
+//       console.log('пустое поле')
 
-   } else {
-      validateBtn.disabled = false;
-      validateBtn.classList.add('manao-link');
-      console.log('clicked on validate')
-      console.log('name: ', nameUser.value)
-      console.log('email: ', emailUser.value)
-      console.log('message: ', messageUser.value)
-      event.target.reset();
-   }
+//    } else {
+//       validateBtn.disabled = false;
+//       validateBtn.classList.add('manao-link');
+//       console.log('clicked on validate')
+//       console.log('name: ', nameUser.value)
+//       console.log('email: ', emailUser.value)
+//       console.log('message: ', messageUser.value)
+//       event.target.reset();
+//    }
 
-});
-
-
-manaoLink.forEach((el) => {
-   el.addEventListener('click', (e) => {
-      let path = e.currentTarget.getAttribute('data-path');
-
-      modals.forEach((el) => {
-         el.classList.remove('modal--visible');
-      });
-
-      document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
-      modalOverlay.classList.add('modal-overlay--visible');
-      body.classList.toggle('stop-scroll');
-   });
-});
-
-modalOverlay.addEventListener('click', (e) => {
-   if (e.target == modalOverlay) {
-      modalOverlay.classList.remove('modal-overlay--visible');
-      modals.forEach((el) => {
-         el.classList.remove('modal--visible');
-         body.classList.toggle('stop-scroll');
-      });
-   }
-});
+// });
 
 // animate input
 inputs.forEach(input => {
@@ -152,6 +124,48 @@ inputs.forEach(input => {
 textarea.addEventListener('keyup', (e) => {
    textarea.classList.add('empty');
 });
+
+
+// вывод с введенными данными в консоль
+function formResults() {
+   const validateBtn = form.querySelector('.btn-form');
+
+   validateBtn.addEventListener('click', (e) => {
+      const nameUser = form.querySelector('.input-name')
+      const emailUser = form.querySelector('.input-email')
+      const messageUser = form.querySelector('.input-message');
+      // const fields = form.querySelectorAll('.inputText input');
+
+      if (messageUser.value && emailUser.value && nameUser.value) {
+         let path = e.currentTarget.getAttribute('data-path');
+         e.preventDefault();
+         modal.classList.remove('modal--visible');
+
+         document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+         modalOverlay.classList.add('modal-overlay--visible');
+         body.classList.toggle('stop-scroll');
+
+         console.log('Данные клиента')
+         console.log('Имя: ', nameUser.value)
+         console.log('email: ', emailUser.value)
+         console.log('Описание задачи: ', messageUser.value)
+         form.reset();
+      } else {
+         validateBtn.disabled = true;
+      }
+   });
+}
+
+formResults();
+
+modalOverlay.addEventListener('click', (e) => {
+   if (e.target == modalOverlay) {
+      modalOverlay.classList.remove('modal-overlay--visible');
+      modal.classList.remove('modal--visible');
+      body.classList.toggle('stop-scroll');
+   }
+});
+
 
 
 
